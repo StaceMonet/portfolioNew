@@ -1,9 +1,16 @@
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Laravel folders
 /node_modules
 /public/build
 /public/hot
 /public/storage
 /storage/*.key
 /vendor
+
+# Laravel environment and cache
 .env
 .env.backup
 .env.production
@@ -16,3 +23,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+
+# Composer and NPM
+composer.lock
+package-lock.json
