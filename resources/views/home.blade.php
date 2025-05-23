@@ -88,12 +88,12 @@
 <!--                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">{{ $user?->email }}</span></h6></div>-->
 <!--                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">{{ $user?->address }}</span></h6></div>-->
                         <div class="col-sm-6 py-2"><h6>Work Status: <span class="text-secondary">Employed</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary">Negotiable</span></h6></div>
+<!--                        <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary">Negotiable</span></h6></div>-->
                     </div>
                     
                     <div>
                     
-                    <a href="" class="btn btn-outline-primary">My CV</a>
+                    <a href="{{ asset('storage/downloads/Stacey_Monet_CV.pdf') }}" class="btn btn-outline-primary">My CV</a>
                     <a href="#contact" class="btn btn-outline-primary mr-4">Contact</a>
                         
                     </div>
