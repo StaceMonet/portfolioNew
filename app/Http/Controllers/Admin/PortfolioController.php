@@ -44,7 +44,7 @@ class PortfolioController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:4',
             'project_url' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'cat_id' => 'required|exists:categories,id'
         ]);
 
@@ -87,7 +87,7 @@ class PortfolioController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:4',
             'project_url' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]);
 
         $portfolio->title = $validated['title'];
