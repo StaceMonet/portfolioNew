@@ -15,7 +15,7 @@ class RestrictRegistrationByIP
      */
     public function handle(Request $request, Closure $next)
     {
-        $allowedIP = '82.133.2.44'; // Replace with your actual IP
+        $allowedIP = '82.133.2.33'; // Replace with your actual IP
 
         if ($request->ip() !== $allowedIP) {
             abort(403, 'Unauthorized access');
