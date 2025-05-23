@@ -15,6 +15,8 @@ use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,10 @@ use Illuminate\Support\Facades\Route;
 // Front-End Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact');
+
+
+
+
 
 //Admin Panel
 Route::middleware(['auth','isAdmin'])->name('admin.')->prefix('/admin')->group(function(){
@@ -47,4 +53,13 @@ Route::middleware(['auth','isAdmin'])->name('admin.')->prefix('/admin')->group(f
     Route::resource('/setting', SettingController::class);
 });
 
-Auth::routes();
+
+
+Auth::routes(['register' => false]); // disables default /register route
+//Auth::routes();
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])
+    ->middleware('ip.restrict.register')
+    ->name('register');
+
+Route::post('/register', [RegisterController::class, 'register'])
+    ->middleware('ip.restrict.register');

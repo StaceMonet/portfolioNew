@@ -93,7 +93,7 @@
                     
                     <div>
                     
-                    <a href="{{ asset('storage/downloads/Stacey_Monet_CV.pdf') }}" class="btn btn-outline-primary">My CV</a>
+                    <a target="_blank" href="{{ asset('storage/downloads/Stacey_Monet_CV.pdf') }}" class="btn btn-outline-primary">My CV</a>
                     <a href="#contact" class="btn btn-outline-primary mr-4">Contact</a>
                         
                     </div>
