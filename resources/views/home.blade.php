@@ -222,7 +222,7 @@
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                             <a href="{{ asset("storage/$portfolio->image") }}"
                                data-lightbox="portfolio"
-                               @if($portfolio->has_description)
+                               @if(!empty($portfolio->description))
                                    data-title="{{ $portfolio->description }}"
                                @endif
                             >

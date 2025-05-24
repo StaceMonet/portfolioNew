@@ -50,6 +50,7 @@ class PortfolioController extends Controller
 
         $portfolio = new Portfolio();
         $portfolio->title = $validated['title'];
+        $portfolio->description = $request->description;
         $portfolio->project_url = $validated['project_url'];
         $portfolio->cat_id = $request->cat_id;
 
@@ -93,6 +94,7 @@ class PortfolioController extends Controller
         $portfolio->title = $validated['title'];
         $portfolio->project_url = $validated['project_url'];
         $portfolio->cat_id = $request->cat_id;
+        $portfolio->description = $request->description;
 
         if($request->hasfile('image')){
             Storage::delete($portfolio->image);

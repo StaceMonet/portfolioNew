@@ -13618,9 +13618,11 @@ dl {
   .table td {
     vertical-align: middle;
     font-size: 0.875rem;
-    line-height: 1;
-    white-space: nowrap;
-    padding: 0.9375rem; }
+    line-height: 1.5;
+    white-space: normal;
+    width: 500px;
+    padding: 0.9375rem;
+    }
     .table th img,
     .table td img {
       width: 36px;

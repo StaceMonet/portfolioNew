@@ -18,6 +18,7 @@
                               <th> # </th>
                               <th> Photo </th>
                               <th> Title </th>
+                              <th> Description</th>
                               <th> Category </th>
                               <th> Manage </th>
                             </tr>
@@ -27,8 +28,9 @@
                             <tr>
                               <td> {{ $portfolio -> id }} </td>
                               <td> <img src="{{ asset("storage/$portfolio->image") }}" alt="image"> </td>
+                              <td> {{ $portfolio -> title }}</td>
                               {{-- <td> <i class="fab {{ $service -> icon }}"  aria-hidden="true"></i></td> --}}
-                              <td> {{ $portfolio -> title }} </td>
+                              <td> {{ $portfolio -> description }} </td>
                               <td> {{ $portfolio -> category-> name }} </td>
                               <td> 
                                 <button type="button" class="btn btn-success btn-sm me-1 " onclick="location.href='{{ route('admin.portfolio.edit', $portfolio->id) }}';">Edit</button>

@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('portfolios', function (Blueprint $table) {
-            $table->boolean('has_description')->default(false)->after('title');
-            $table->text('description')->nullable()->after('has_description');
+          
+            $table->text('description')->nullable()->after('title');
         });
     }
 
@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('portfolios', function (Blueprint $table) {
-            $table->dropColumn(['has_description', 'description']);
+            $table->dropColumn(['description']);
         });
     }
 };

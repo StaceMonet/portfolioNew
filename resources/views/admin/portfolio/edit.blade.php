@@ -32,6 +32,7 @@
                 </div>
               </div>
             </div>
+            
             <div class="col-md-7">
               <div class="form-group row">
                 <label class="col-sm-3 col-form-label">Url</label>
@@ -40,6 +41,16 @@
                 </div>
               </div>
             </div>
+              
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                  <textarea name="description" class="form-control" rows="4" placeholder="Enter Description" required>{{ $portfolio->description }}</textarea>
+                </div>
+              </div>
+            </div>
+              
             <div class="form-group">
               <label>File upload</label>
               <input type="file" name="image" class="file-upload-default">
