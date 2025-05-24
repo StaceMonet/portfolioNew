@@ -2,33 +2,12 @@
 
 @section('content')
 
-    <!-- Video Modal Start -->
-<!--
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                     16:9 aspect ratio 
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
-    <!-- Video Modal End -->
-
-
     <!-- Header Start -->
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <<img 
+                    <img 
     class="img-fluid w-100 rounded-circle shadow-sm" 
     src="{{ $user && $user->profile_pic ? asset('storage/' . $user->profile_pic) : asset('images/default-profile.png') }}" 
     alt="">
@@ -36,20 +15,9 @@
                 
                 
                 <div class="col-lg-7 text-center text-lg-left">
-<!--                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>-->
                     <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #3a61a1;">{{ $user?->name }}</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-type-color"></h1>
                     <div class="typed-text d-none">Professional {{ $user?->job }}</div>
-<!--
-                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-                        <a href="{{ $setting->cv_url }}" class="btn btn-outline-light mr-5">Download CV</a>
-                        <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="{{$setting->video_url }}" data-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="font-weight-normal text-white m-0 ml-4 d-none d-sm-block">Play Video</h5>
-                    </div>
--->
                 </div>
             </div>
         </div>
@@ -79,20 +47,14 @@
                          <div class="col-sm-6 py-2"><h6>Hobbies: <span class="text-secondary">Music, Art, Nature, Food</span></h6></div>
                         
                         <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">+10 Years</span></h6></div>
-<!--                        <div class="col-sm-6 py-2"><h6>Phone: <span class="text-secondary">{{ $user?->phone }}</span></h6></div>-->
-<!--                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">{{ $user?->email }}</span></h6></div>-->
-<!--                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">{{ $user?->address }}</span></h6></div>-->
                         <div class="col-sm-6 py-2"><h6>Work Status: <span class="text-secondary">Employed</span></h6></div>
                         <div class="col-sm-6 py-2"><h6>Github: <a href="https://github.com/StaceMonet"><span class="text-secondary">{{ $setting->github_url }}</span></a></h6></div>
                     </div>
                     
                     <div>
-                    
-                    <a target="_blank" href="{{ asset('storage/downloads/Stacey_Monet_CV.pdf') }}" class="btn btn-outline-primary">My CV</a>
-                    <a href="#contact" class="btn btn-outline-primary mr-4">Contact</a>
-                        
+                        <a target="_blank" href="{{ asset('storage/downloads/Stacey_Monet_CV.pdf') }}" class="btn btn-outline-primary">My CV</a>
+                        <a href="#contact" class="btn btn-outline-primary mr-4">Contact</a>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -156,7 +118,6 @@
                     <div class="skill mb-4">
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-bold">{{ $skill->name }}</h6>
-<!--                            <h6 class="font-weight-bold">{{$skill->percent}}%</h6>-->
                         </div>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" aria-valuenow="{{$skill->percent}}" aria-valuemin="0" aria-valuemax="100" style="background-color: #358e9c"></div>
@@ -229,9 +190,14 @@
                                 <i class="fa fa-plus text-white" style="font-size: 50px;"></i>
                             </a>
                             
-                            <a target="_blank" href="{{ $portfolio->project_url }}" >
-                                <i class="fa-solid fa-link text-white" style="margin-left:20px; font-size: 50px;"></i>
-                            </a>
+                            
+                            
+                            
+                            @if($portfolio->category->name === 'Websites')
+                                <a target="_blank" href="{{ $portfolio->project_url }}">
+                                    <i class="fa-solid fa-link text-white" style="margin-left:20px; font-size: 50px;"></i>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -246,24 +212,24 @@
 /* Override Lightbox2 caption style */
 
 
-    .lb-data .lb-details {
-        width: 100%;
-        float: left;
-        text-align: left;
-        line-height: 1.1em;
+.lb-data .lb-details {
+    width: 100%;
+    float: left;
+    text-align: left;
+    line-height: 1.1em;
 }
     
-    .lb-data .lb-caption {
-        font-family: system-ui, sans-serif;
-        padding:10px;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 1em;
-        display: block;
-        height: 100px;
-        width: 100%;
-        
-    }
+.lb-data .lb-caption {
+    font-family: system-ui, sans-serif;
+    padding:10px;
+    padding-bottom: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1em;
+    display: block;
+    width: 100%;
+
+}
     
 .lb-data .lb-close {
     position: absolute;
@@ -273,7 +239,6 @@
     float: right;
     width: 30px;
     height: 30px;
-/*    background: url(../images/close.png) top right nortd;*/
     text-align: right;
     outline: 0;
     filter: alpha(Opacity=70);
@@ -282,29 +247,36 @@
     -moz-transition: opacity .2s;
     -o-transition: opacity .2s;
     transition: opacity .2s;
-    
-    }
-    
-    .lb-close {
-    background: url(../images/close.png) top right no-repeat;
-        z-index: 9999; /* higher than .lb-next */
 }
     
-    .lb-next {
+.lb-close {
+    background: url(../images/close.png) top right no-repeat;
+    z-index: 9999; /* higher than .lb-next */
+}
+    
+.lb-next {
     width: 64%; /* or reduce this if needed */
     height: 64px; /* match the icon height */
     top: 50%;
     transform: translateY(-50%);
     right: 0;
     position: absolute;
-
     background: url(../images/next.png) right center no-repeat;
     background-size: 64px 64px; /* adjust to match your icon */
-
     opacity: 0;
     transition: opacity 0.6s;
     z-index: 9998; /* slightly lower than close button */
 }
+    
+    
+.lb-data .lb-number {
+    display: block;
+    clear: left;
+    padding-bottom: 1em;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}    
 
 </style>
     <!-- Portfolio End -->
