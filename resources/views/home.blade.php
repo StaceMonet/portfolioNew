@@ -83,7 +83,7 @@
 <!--                        <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">{{ $user?->email }}</span></h6></div>-->
 <!--                        <div class="col-sm-6 py-2"><h6>Address: <span class="text-secondary">{{ $user?->address }}</span></h6></div>-->
                         <div class="col-sm-6 py-2"><h6>Work Status: <span class="text-secondary">Employed</span></h6></div>
-<!--                        <div class="col-sm-6 py-2"><h6>Freelance: <span class="text-secondary">Negotiable</span></h6></div>-->
+                        <div class="col-sm-6 py-2"><h6>Github: <a href="https://github.com/StaceMonet"><span class="text-secondary">{{ $setting->github_url }}</span></a></h6></div>
                     </div>
                     
                     <div>
