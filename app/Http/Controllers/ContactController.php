@@ -29,6 +29,7 @@ class ContactController extends Controller
         ]);
 
         $body = $response->json();
+        \Log::info('reCAPTCHA response', $body);
 
         if (!$body['success'] || $body['score'] < 0.5) {
             return back()->withErrors(['recaptcha' => 'reCAPTCHA verification failed.']);
