@@ -376,6 +376,11 @@
                                     required>{{old('content')}}</textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
+                            
+                            
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                            
                             <div>
                                 <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
                                     Message</button>
