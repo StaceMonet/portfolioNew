@@ -3,6 +3,8 @@
 Thumbs.db
 
 # Laravel folders
+/public/storage
+/storage/*.key
 /node_modules
 /public/build
 /public/hot

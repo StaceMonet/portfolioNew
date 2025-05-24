@@ -35,11 +35,6 @@
                 </div>
                 
                 
-            
-                
-                
-               
-                
                 <div class="col-lg-7 text-center text-lg-left">
 <!--                    <h3 class="text-white font-weight-normal mb-3">I'm</h3>-->
                     <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #3a61a1;">{{ $user?->name }}</h1>
@@ -225,10 +220,16 @@
                     <div class="position-relative mb-2">
                         <img class="img-fluid rounded w-100" src="{{ $portfolio && $portfolio->image ? asset('storage/' . $portfolio->image) : asset('images/default-portfolio.png') }}" alt="Portfolio Image">
                         <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset("storage/$portfolio->image") }}" data-lightbox="portfolio">
+                            <a href="{{ asset("storage/$portfolio->image") }}"
+                               data-lightbox="portfolio"
+                               @if($portfolio->has_description)
+                                   data-title="{{ $portfolio->description }}"
+                               @endif
+                            >
                                 <i class="fa fa-plus text-white" style="font-size: 50px;"></i>
                             </a>
-                            <a href="{{ $portfolio->project_url }}" data-lightbox="portfolio">
+                            
+                            <a target="_blank" href="{{ $portfolio->project_url }}" >
                                 <i class="fa-solid fa-link text-white" style="margin-left:20px; font-size: 50px;"></i>
                             </a>
                         </div>
@@ -238,6 +239,74 @@
             </div>
         </div>
     </div>
+
+
+<style>
+
+/* Override Lightbox2 caption style */
+
+
+    .lb-data .lb-details {
+        width: 100%;
+        float: left;
+        text-align: left;
+        line-height: 1.1em;
+}
+    
+    .lb-data .lb-caption {
+        font-family: system-ui, sans-serif;
+        padding:10px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1em;
+        display: block;
+        height: 100px;
+        width: 100%;
+        
+    }
+    
+.lb-data .lb-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+/*    background: url(../images/close.png) top right nortd;*/
+    text-align: right;
+    outline: 0;
+    filter: alpha(Opacity=70);
+    opacity: .7;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    
+    }
+    
+    .lb-close {
+    background: url(../images/close.png) top right no-repeat;
+        z-index: 9999; /* higher than .lb-next */
+}
+    
+    .lb-next {
+    width: 64%; /* or reduce this if needed */
+    height: 64px; /* match the icon height */
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    position: absolute;
+
+    background: url(../images/next.png) right center no-repeat;
+    background-size: 64px 64px; /* adjust to match your icon */
+
+    opacity: 0;
+    transition: opacity 0.6s;
+    z-index: 9998; /* slightly lower than close button */
+}
+
+</style>
     <!-- Portfolio End -->
 
 
