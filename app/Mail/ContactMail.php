@@ -39,7 +39,10 @@ class ContactMail extends Mailable
     {
         return new Envelope(
             subject: $this->subject_mail,
-            from: new Address($this->email, $this->name)          
+            from: new Address('contact@stacey-monet.co.uk', 'Stacey Monet Website'),
+            replyTo: [
+                new Address($this->email, $this->name)
+            ]
         );
     }
 
