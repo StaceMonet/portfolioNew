@@ -26,7 +26,7 @@ class QualificationController extends Controller
     }
 
     public function index()
-{
+    {
         $qualifications = Qualification::all();
         return view('admin.qualification.index', compact('qualifications'));
     }
