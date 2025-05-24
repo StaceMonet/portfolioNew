@@ -378,8 +378,8 @@
                             </div>
                             
                             
-                            {!! NoCaptcha::renderJs() !!}
-                            {!! NoCaptcha::display() !!}
+                             <!-- Hidden input for reCAPTCHA token -->
+                            <input type="hidden" name="recaptcha_token" id="recaptcha_token">
                             
                             <div>
                                 <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
@@ -402,6 +402,16 @@
         </div>
     </div>
     <!-- Contact End -->
+
+    <!-- Include reCAPTCHA v3 JS -->
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'submit'}).then(function (token) {
+                document.getElementById('recaptcha_token').value = token;
+            });
+        });
+    </script>
 
 
     <!-- Footer Start -->
