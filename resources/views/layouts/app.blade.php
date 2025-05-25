@@ -6,7 +6,7 @@
     <title>Stacey Monet</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Stacey Monet Portfolio" name="keywords">
-    <meta content="Protfolio Site for the web developer Stacey Monet" name="description">
+    <meta content="A Portfolio Website for Stacey Monet the Web Developer" name="description">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
