@@ -10048,3 +10048,38 @@ h6,
     background-size: contain;
     background-size: 40px;
 }
+
+.service-icon.git {
+    display: inline-block;
+    background: url('/storage/images/icons/git.svg') no-repeat center center;
+    background-size: contain;
+    background-size: 40px;
+}
+
+.service-icon.cpanel {
+    display: inline-block;
+    background: url('/storage/images/icons/cpanel.svg') no-repeat center center;
+    background-size: contain;
+    background-size: 40px;
+}
+
+.service-icon.digitalocean {
+    display: inline-block;
+    background: url('/storage/images/icons/digitalocean.svg') no-repeat center center;
+    background-size: contain;
+    background-size: 40px;
+}
+
+.service-icon.adobe {
+    display: inline-block;
+    background: url('/storage/images/icons/adobe.svg') no-repeat center center;
+    background-size: contain;
+    background-size: 40px;
+}
+
+.service-icon.tailwind {
+    display: inline-block;
+    background: url('/storage/images/icons/tailwind.svg') no-repeat center center;
+    background-size: contain;
+    background-size: 40px;
+}
