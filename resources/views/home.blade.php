@@ -189,10 +189,7 @@
                             >
                                 <i class="fa fa-plus text-white" style="font-size: 50px;"></i>
                             </a>
-                            
-                            
-                            
-                            
+                              
                             @if($portfolio->category->name === 'Websites')
                                 <a target="_blank" href="{{ $portfolio->project_url }}">
                                     <i class="fa-solid fa-link text-white" style="margin-left:20px; font-size: 50px;"></i>
@@ -205,80 +202,6 @@
             </div>
         </div>
     </div>
-
-
-<style>
-
-/* Override Lightbox2 caption style */
-
-
-.lb-data .lb-details {
-    width: 100%;
-    float: left;
-    text-align: left;
-    line-height: 1.1em;
-}
-    
-.lb-data .lb-caption {
-    font-family: system-ui, sans-serif;
-    padding:10px;
-    padding-bottom: 20px;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 1em;
-    display: block;
-    width: 100%;
-
-}
-    
-.lb-data .lb-close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    display: block;
-    float: right;
-    width: 30px;
-    height: 30px;
-    text-align: right;
-    outline: 0;
-    filter: alpha(Opacity=70);
-    opacity: .7;
-    -webkit-transition: opacity .2s;
-    -moz-transition: opacity .2s;
-    -o-transition: opacity .2s;
-    transition: opacity .2s;
-}
-    
-.lb-close {
-    background: url(../images/close.png) top right no-repeat;
-    z-index: 9999; /* higher than .lb-next */
-}
-    
-.lb-next {
-    width: 64%; /* or reduce this if needed */
-    height: 64px; /* match the icon height */
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    position: absolute;
-    background: url(../images/next.png) right center no-repeat;
-    background-size: 64px 64px; /* adjust to match your icon */
-    opacity: 0;
-    transition: opacity 0.6s;
-    z-index: 9998; /* slightly lower than close button */
-}
-    
-    
-.lb-data .lb-number {
-    display: block;
-    clear: left;
-    padding-bottom: 1em;
-    font-size: 12px;
-    color: #999;
-    text-align: center;
-}    
-
-</style>
     <!-- Portfolio End -->
 
 
@@ -296,7 +219,6 @@
                             <div class="text-center">
                                 <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
                                 <h4 class="font-weight-light mb-4">{{ $review->description }}</h4>
-<!--                                <img class="img-fluid rounded-circle mx-auto mb-3" src="{{ asset("storage/$review->image") }}" style="width: 80px; height: 80px;">-->
                                 <h5 class="font-weight-bold m-0">{{ $review->name }} </h5>
                                 <span>{{ $review->job }}</span>
                             </div>
@@ -390,25 +312,12 @@
     <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="container text-center py-5">
             <div class="d-flex justify-content-center mb-4">
-<!--
-                <a class="btn btn-light btn-social mr-2" href="{{ $setting->github_url }}"><i class="fab fa-github"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="{{ $setting->fb_url }}"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-light btn-social mr-2" href="{{ $setting->linkedin_url }}"><i class="fab fa-linkedin-in"></i></a>
--->
             </div>
-<!--
-            <div class="d-flex justify-content-center mb-3">
-                <a class="text-white" href="#">Privacy</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Terms</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">FAQs</a>
-                <span class="px-3">|</span>
-                <a class="text-white" href="#">Help</a>
-            </div>
--->
-            <p class="m-0"><!--&copy; <a class="text-white font-weight-bold" href="#">Stacey Monet</a>. All Rights Reserved. -->Website Designed by <a class="text-white font-weight-bold" href="#">Stacey Monet</a>
+
+            <p class="m-0">Website Designed by <a class="text-white font-weight-bold" href="#">Stacey Monet</a>
             </p>
+            
+            <p class="m-0">Original Laravel Template From <a target="_blank" href="https://github.com/YasserElgammal/Portfolio">Yasser Elgammel</a></p>
         </div>
     </div>
     <!-- Footer End -->

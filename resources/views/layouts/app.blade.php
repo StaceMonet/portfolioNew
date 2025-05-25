@@ -26,6 +26,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('import/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('import/assets/css/custom-lightbox-changes.css') }}" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
