@@ -17,7 +17,14 @@
                 <div class="col-lg-7 text-center text-lg-left">
                     <h1 class="display-3 text-uppercase text-primary mb-2" style="-webkit-text-stroke: 2px #3a61a1;">{{ $user?->name }}</h1>
                     <h1 class="typed-text-output d-inline font-weight-lighter text-type-color"></h1>
-                    <div class="typed-text d-none">Professional {{ $user?->job }}</div>
+                    <div class="typed-text d-none">
+                        @if (Session::has('message'))
+                          {{ Session::get('message') }}
+                        @else
+                        Professional {{ $user?->job }}
+                        @endif
+                        
+                    </div>
                 </div>
             </div>
         </div>
