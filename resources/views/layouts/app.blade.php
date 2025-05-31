@@ -56,22 +56,28 @@
 
     @yield('content')
 
-       <!-- JavaScript Libraries -->
-       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-       <script src="{{ asset('import/assets/lib/typed/typed.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/easing/easing.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/waypoints/waypoints.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
-       <script src="{{ asset('import/assets/lib/lightbox/js/lightbox.min.js') }}"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('import/assets/lib/typed/typed.min.js') }}"></script>
+        <script src="{{ asset('import/assets/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ asset('import/assets/lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ asset('import/assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    
+    
+        <!-- Required for isotope and image loading fix -->
+        <script src="{{ asset('import/assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    
+        
+        <script src="{{ asset('import/assets/lib/lightbox/js/lightbox.min.js') }}"></script>
 
-       <!-- Contact Javascript File -->
-       <script src="{{ asset('mail/jqBootstrapValidation.min.js') }}"></script>
-       <script src="{{ asset('import/assets/mail/contact.js') }}"></script>
+        <!-- Contact Javascript File -->
+        <script src="{{ asset('mail/jqBootstrapValidation.min.js') }}"></script>
+        <script src="{{ asset('import/assets/mail/contact.js') }}"></script>
 
-       <!-- Template Javascript -->
-       <script src="{{ asset('import/assets/js/main.js') }}"></script>
-   </body>
+        <!-- Template Javascript -->
+        <script src="{{ asset('import/assets/js/main.js') }}"></script>
+    </body>
 
    </html>

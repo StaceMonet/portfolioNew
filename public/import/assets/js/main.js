@@ -75,48 +75,34 @@
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, {offset: '80%'});
-
-
-//    // Portfolio isotope and filter
-//    var portfolioIsotope = $('.portfolio-container').isotope({
-//        itemSelector: '.portfolio-item',
-//        layoutMode: 'fitRows'
-//    });
-//    $('#portfolio-flters li').on('click', function () {
-//        $("#portfolio-flters li").removeClass('active');
-//        $(this).addClass('active');
-//
-//        portfolioIsotope.isotope({filter: $(this).data('filter')});
-//    });
-//    
-//    // Trigger filter for the first category on page load
-//    $(document).ready(function () {
-//        $('#portfolio-flters li').first().trigger('click');
-//    });
-    
+ 
     
     $(document).ready(function () {
         var $portfolio = $('.portfolio-container');
 
-        var portfolioIsotope = $portfolio.isotope({
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-        });
+        // Wait until all images are loaded
+        $portfolio.imagesLoaded(function () {
+            var portfolioIsotope = $portfolio.isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
 
-        $('#portfolio-flters li').on('click', function () {
-            $("#portfolio-flters li").removeClass('active');
-            $(this).addClass('active');
+            // Filter buttons
+            $('#portfolio-flters li').on('click', function () {
+                $("#portfolio-flters li").removeClass('active');
+                $(this).addClass('active');
 
-            portfolioIsotope.isotope({ filter: $(this).data('filter') });
-        });
+                portfolioIsotope.isotope({ filter: $(this).data('filter') });
+            });
 
-        // Trigger first filter and mark as loaded
-        const $firstFilter = $('#portfolio-flters li').first();
-        $firstFilter.trigger('click');
+            // Trigger first filter
+            const $firstFilter = $('#portfolio-flters li').first();
+            $firstFilter.trigger('click');
 
-        // Wait for isotope to finish layout then show container
-        $portfolio.on('arrangeComplete', function () {
-            $portfolio.addClass('portfolio-loaded');
+            // Once layout is complete, mark it loaded
+            $portfolio.on('arrangeComplete', function () {
+                $portfolio.addClass('portfolio-loaded');
+            });
         });
     });
     
