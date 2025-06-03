@@ -204,9 +204,16 @@
                             @endif
                         </div>
                     </div>
+                    
+                    
+                    
                 </div>
+                
+                
+                
                 @endforeach
             </div>
+            <p>Please note any works by current employer cannot be shown here for legal/privacy reasons. If you wish to find out more about recent projects please review CV or send email.</p>
         </div>
     </div>
     <!-- Portfolio End -->
