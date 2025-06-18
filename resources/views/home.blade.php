@@ -19,9 +19,11 @@
                     <h1 class="typed-text-output d-inline font-weight-lighter text-type-color"></h1>
                     <div class="typed-text d-none">
                         @if (Session::has('message'))
-                          {{ Session::get('message') }}
+                            {{ Session::get('message') }}
+                        @elseif ($errors->any())
+                            The Form Failed To Submit, Please Try Again
                         @else
-                        Professional {{ $user?->job }}
+                            Professional {{ $user?->job }}, Welcome to my Website
                         @endif
                         
                     </div>
@@ -184,33 +186,27 @@
             </div>
             <div class="row portfolio-container">
                 @foreach ($portfolios as $portfolio)
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item {{$portfolio->category->name }}">
-                    <div class="position-relative mb-2">
-                        <img class="img-fluid rounded w-100" src="{{ $portfolio && $portfolio->image ? asset('storage/' . $portfolio->image) : asset('images/default-portfolio.png') }}" alt="Portfolio Image">
-                        <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
-                            <a href="{{ asset("storage/$portfolio->image") }}"
-                               data-lightbox="portfolio"
-                               @if(!empty($portfolio->description))
-                                   data-title="{{ $portfolio->description }}"
-                               @endif
-                            >
-                                <i class="fa fa-plus text-white" style="font-size: 50px;"></i>
-                            </a>
-                              
-                            @if($portfolio->category->name === 'Websites')
-                                <a target="_blank" href="{{ $portfolio->project_url }}">
-                                    <i class="fa-solid fa-link text-white" style="margin-left:20px; font-size: 50px;"></i>
+                    <div class="col-lg-4 col-md-6 mb-4 portfolio-item {{$portfolio->category->name }}">
+                        <div class="position-relative mb-2">
+                            <img class="img-fluid rounded w-100" src="{{ $portfolio && $portfolio->image ? asset('storage/' . $portfolio->image) : asset('images/default-portfolio.png') }}" alt="Portfolio Image">
+                            <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+                                <a href="{{ asset("storage/$portfolio->image") }}"
+                                   data-lightbox="portfolio"
+                                   @if(!empty($portfolio->description))
+                                       data-title="{{ $portfolio->description }}"
+                                   @endif
+                                >
+                                    <i class="fa fa-plus text-white" style="font-size: 50px;"></i>
                                 </a>
-                            @endif
+
+                                @if($portfolio->category->name === 'Websites')
+                                    <a target="_blank" href="{{ $portfolio->project_url }}">
+                                        <i class="fa-solid fa-link text-white" style="margin-left:20px; font-size: 50px;"></i>
+                                    </a>
+                                @endif
+                            </div>
                         </div>
                     </div>
-                    
-                    
-                    
-                </div>
-                
-                
-                
                 @endforeach
             </div>
             <p>Please note any works by current employer cannot be shown here for legal/privacy reasons. If you wish to find out more about recent projects please review CV or send email.</p>
@@ -337,28 +333,36 @@
     <!-- Footer End -->
 
     <!-- Scroll to Bottom -->
-    <a href="#about" class="scroll-to-bottom nav-link">
-        <i class="fa fa-2x fa-angle-down text-white"></i>
-    </a>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        const targetEl = document.querySelector(targetId);
+    @if ($errors->any()) 
+        <a href="#contact" class="scroll-to-bottom nav-link">
+            <i class="fa fa-2x fa-angle-down text-white"></i>
+        </a>
+    @else
+        <a href="#about" class="scroll-to-bottom nav-link">
+            <i class="fa fa-2x fa-angle-down text-white"></i>
+        </a>
+    @endif
+    
 
-        if (targetEl) {
-          e.preventDefault();
-          window.scrollTo({
-            top: targetEl.offsetTop,
-            behavior: 'smooth'
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            const targetEl = document.querySelector(targetId);
+
+            if (targetEl) {
+              e.preventDefault();
+              window.scrollTo({
+                top: targetEl.offsetTop,
+                behavior: 'smooth'
+              });
+            }
           });
-        }
+        });
       });
-    });
-  });
-</script>
+    </script>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
