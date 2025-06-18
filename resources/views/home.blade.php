@@ -336,10 +336,10 @@
 
     @if ($errors->any()) 
         <a href="#contact" class="scroll-to-bottom nav-link">
-            <p class="text-white">Fix Me</i>
+            <p class="fa fa-2x text-white">Fix</i>
         </a>
     @else
-        <a href="#about" class="scroll-to-bottom nav-link">
+        <a href="#about" class="scroll-to-bottom nav-link text-white">
             <i class="fa fa-2x fa-angle-down text-white"></i>
         </a>
     @endif
