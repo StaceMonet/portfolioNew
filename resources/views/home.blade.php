@@ -38,7 +38,7 @@
     <div class="container-fluid py-5" id="about">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #000;">About</h1>
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
                 <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
             </div>
             <div class="row align-items-center">
@@ -53,10 +53,10 @@
                        
                         <div class="col-sm-6 py-2"><h6>Degree: <span class="text-secondary">Bournemouth University</span></h6></div>
                         
-                         <div class="col-sm-6 py-2"><h6>Hobbies: <span class="text-secondary">Music, Art, Nature, Food</span></h6></div>
+                        <div class="col-sm-6 py-2"><h6>Hobbies: <span class="text-secondary">Music, Art, Nature, Food</span></h6></div>
                         
                         <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">+10 Years</span></h6></div>
-                        <div class="col-sm-6 py-2"><h6>Work Status: <span class="text-secondary">Employed</span></h6></div>
+                        
                         <div class="col-sm-6 py-2"><h6>Github: <a href="https://github.com/StaceMonet"><span class="text-secondary">{{ $setting->github_url }}</span></a></h6></div>
                     </div>
                     
@@ -336,7 +336,7 @@
 
     @if ($errors->any()) 
         <a href="#contact" class="scroll-to-bottom nav-link">
-            <i class="fa fa-2x fa-angle-down text-white"></i>
+            <p class="text-white">Fix Me</i>
         </a>
     @else
         <a href="#about" class="scroll-to-bottom nav-link">
