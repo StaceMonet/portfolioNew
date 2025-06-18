@@ -55,7 +55,13 @@
                         
                         <div class="col-sm-6 py-2"><h6>Hobbies: <span class="text-secondary">Music, Art, Nature, Food</span></h6></div>
                         
+        
+                        
+                        
                         <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary">+10 Years</span></h6></div>
+                    
+                    
+                        <div class="col-sm-6 py-2"><h6>LinkedIn: <a href="https://www.linkedin.com/in/stacey-monet-70a8b182/"><span class="text-secondary">https://www.linkedin.com/in/stacey-monet</span></a></h6></div>
                         
                         <div class="col-sm-6 py-2"><h6>Github: <a href="https://github.com/StaceMonet"><span class="text-secondary">{{ $setting->github_url }}</span></a></h6></div>
                     </div>
